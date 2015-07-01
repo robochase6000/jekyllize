@@ -111,7 +111,7 @@ class NetPacket
 		// write header bits - packet index and player id.
 		var bitStreamWriter:BitStreamWriter = new BitStreamWriter();
 		bitStreamWriter.writeBits(packetIndex, 8);
-		bitStreamWriter.writeBits(NetworkManager.instance.localPlayerId, 3);
+		bitStreamWriter.writeBits(NetPlayerData.localPlayerId, 3);
 
 		// write event bits.
 		for (eventIndex in 0 ... _networkEvents.length) 
@@ -155,7 +155,7 @@ class NetPacket
 			}
 
 			// debug
-			NetPacket.traceTraffic("NET SEND", packetIndex, NetworkManager.instance.localPlayerId, _networkEvents);
+			NetPacket.traceTraffic("NET SEND", packetIndex, NetPlayerData.localPlayerId, _networkEvents);
 
 			connection.sendBytes(_bytes);
 			

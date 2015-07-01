@@ -166,11 +166,17 @@ class NetEvent implements INetEvent
 	{
 		trace("NetEvent.execute() netEventType: " + netEventType + " senderId: " + senderId + " packetIndex: " + packetIndex);
 
+		/*
+		// todo :: figure out what to do about NetworkManager
+
 		// if we just ran this event and it requires acknowledgement, we need to queue up an acknowledgement event for the sender.
 		if (requiresAcknowledgement)
 		{
 			NetworkManager.instance.sendPacketReceivedEventTo(senderId, packetIndex);
+
+			// note to self :: this line was commented out in the original code.
 			//NetworkManager.instance.sendEventToPlayerId(senderId, new PacketReceivedEvent({playerId:senderId, packetIndex:packetIndex}));
 		}
+		*/
 	}
 }

@@ -79,7 +79,9 @@ class PlayerConnectEvent extends NetEvent
 		trace("PlayerConnectEvent.execute() netEventType: " + netEventType + " playerId: " + playerId + " senderId: " + senderId + " packetIndex: " + packetIndex);
 		
 		var playerData:NetPlayerData = NetPlayerData.create(playerId, serverUrl, serverPort, NetTeamData.getById(playerId % 2));
-		if (playerData.id != NetworkManager.instance.localPlayerId)
+		/*
+		// todo :: figure out what to do about NetworkManager
+		if (playerData.id != NetPlayerData.localPlayerId)
 		{
 			EventDispatcherLite.instance.dispatchEvent(new EventLite("player_connected", playerData));
 
@@ -88,6 +90,7 @@ class PlayerConnectEvent extends NetEvent
 				NetworkManager.instance.connectTo(playerData.id, playerData.serverUrl, playerData.serverPort);
 			}
 		}
+		*/
 
 		super.execute(senderId, packetIndex, siblingNetworkEvents);
 	}

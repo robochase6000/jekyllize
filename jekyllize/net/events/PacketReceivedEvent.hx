@@ -1,11 +1,8 @@
 package jekyllize.net.events;
 
 import jekyllize.net.events.INetEvent;
-import jekyllize.net.NetworkManager;
-
 import jekyllize.utils.BitStreamReader;
 import jekyllize.utils.BitStreamWriter;
-import jekyllize.utils.EventDispatcherLite;
 
 /**
  * event for when a bullet is created.

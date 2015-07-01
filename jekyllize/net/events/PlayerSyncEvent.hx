@@ -3,8 +3,6 @@ package jekyllize.net.events;
 import jekyllize.entities.Player;
 import jekyllize.net.data.NetPlayerData;
 import jekyllize.net.events.INetEvent;
-import jekyllize.net.NetworkManager;
-
 import jekyllize.utils.BitStreamReader;
 import jekyllize.utils.BitStreamWriter;
 import jekyllize.utils.EventDispatcherLite;
@@ -98,11 +96,14 @@ class PlayerSyncEvent extends NetEvent
 	{
 		//trace("PlayerSyncEvent.execute() netEventType: " + netEventType + ", _playerId: " + _playerId + " pos: " + _x + "," + _y + ", aim: " + _aim);
 		
-		if (NetworkManager.instance.localPlayerId != _playerId)
+		/*
+		// todo :: figure out what to do about NetworkManager
+		if (NetPlayerData.localPlayerId != _playerId)
 		{
 			var playerData:NetPlayerData = NetPlayerData.getById(_playerId);
 			EventDispatcherLite.instance.dispatchEvent(new EventLite("player_sync", {playerData:playerData, position:{x:_x, y:_y}, velocity:{x:_velocityX, y:_velocityY}, weaponFireIndex:-1}));
 		}
+		*/
 
 		super.execute(senderId, packetIndex, siblingNetworkEvents);
 	}	

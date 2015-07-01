@@ -6,6 +6,10 @@ import jekyllize.net.data.NetTeamData;
 
 class NetPlayerData
 {
+	static public var localPlayerData(default,null):NetPlayerData;
+	static public var localPlayerId(get,null):Int;
+	static private function get_localPlayerId():Int { return localPlayerData.id; }
+
 	static private var s_playerDatas:IntMap<NetPlayerData> = new IntMap<NetPlayerData>();
 
 	static public function clearStaticData():Void
