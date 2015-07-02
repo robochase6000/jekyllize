@@ -8,7 +8,7 @@ fire up the NetworkManager, queue up some NetEvent objects, and they will be sen
 A NetEvent can be configured to -
 
 1. require a receipt
-2. resent rate if no receipt is sent back
+2. resend rate if no receipt is sent back
 3. decide whether to ignore old events of the same type (for example, when syncing positions)
 4. more to come, if needed.
 
