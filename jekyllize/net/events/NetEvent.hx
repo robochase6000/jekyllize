@@ -33,9 +33,11 @@ class NetEvent implements INetEvent
 				case NetEventType.PLAYER_DISCONNECT:
 					evt = new PlayerDisconnectEvent(null);
 				case NetEventType.PLAYER_SYNC:
-					evt = new PlayerSyncEvent(null);
+					// todo :: factory pattern?
+					//evt = new PlayerSyncEvent(null);
 				case NetEventType.BULLET_CREATED:
-					evt = new BulletCreatedEvent(null);
+					// todo :: factory pattern?
+					//evt = new BulletCreatedEvent(null);
 				case NetEventType.BULLET_DESTROYED:
 					//output.push(PlayerSyncEvent.create(bsr));
 				case NetEventType.INVALID:

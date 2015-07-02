@@ -77,7 +77,7 @@ class PlayerConnectEvent extends NetEvent
 	{
 		trace("PlayerConnectEvent.execute() netEventType: " + netEventType + " playerId: " + playerId + " senderId: " + senderId + " packetIndex: " + packetIndex);
 		
-		var playerData:NetPlayerData = NetPlayerData.create(playerId, serverUrl, serverPort, NetTeamData.getById(NetPlayerData.getTeamIdFor(asPlayerId)));
+		var playerData:NetPlayerData = NetPlayerData.create(playerId, serverUrl, serverPort, NetTeamData.getById(NetPlayerData.getTeamIdFor(playerId)));
 
 		if (playerData.id != NetPlayerData.localPlayerId)
 		{
