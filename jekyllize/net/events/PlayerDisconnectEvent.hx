@@ -1,8 +1,6 @@
 package jekyllize.net.events;
 
-import jekyllize.entities.Player;
 import jekyllize.net.events.INetEvent;
-
 import jekyllize.utils.BitStreamReader;
 import jekyllize.utils.BitStreamWriter;
 
@@ -19,8 +17,6 @@ class PlayerDisconnectEvent extends NetEvent
 	override private function get_requiresAcknowledgement():Bool { return true; }
 	override private function get_requiresRepackingBeforeResend():Bool { return false; }
 	override private function get_ignoreOldPackets():Bool { return false; }
-
-	public var player(default, null):Player;
 
 	public function new(data:Dynamic)
 	{

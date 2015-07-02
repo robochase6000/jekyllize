@@ -34,8 +34,6 @@ class NetPlayerData
 		output.id = id;
 		output.serverUrl = url;
 		output.serverPort = port;
-
-		// todo :: quick ghetto team assignment.
 		output.team = team;
 
 		s_playerDatas.set(id, output);
@@ -52,6 +50,12 @@ class NetPlayerData
 			return s_playerDatas.get(id);
 		}
 		return null;
+	}
+
+	// quick ghetto thing for getting a team id. presumably team ids would come from the matchmaking server someday.
+	static public function getTeamIdFor(playerId:Int):Int
+	{
+		return playerId % 2;
 	}
 
 	public var id(default,null):Int;

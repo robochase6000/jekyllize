@@ -1,6 +1,5 @@
 package jekyllize.net.events;
 
-import jekyllize.entities.Player;
 import jekyllize.net.data.NetPlayerData;
 import jekyllize.net.data.NetTeamData;
 import jekyllize.net.events.INetEvent;
@@ -78,9 +77,8 @@ class PlayerConnectEvent extends NetEvent
 	{
 		trace("PlayerConnectEvent.execute() netEventType: " + netEventType + " playerId: " + playerId + " senderId: " + senderId + " packetIndex: " + packetIndex);
 		
-		var playerData:NetPlayerData = NetPlayerData.create(playerId, serverUrl, serverPort, NetTeamData.getById(playerId % 2));
-		/*
-		// todo :: figure out what to do about NetworkManager
+		var playerData:NetPlayerData = NetPlayerData.create(playerId, serverUrl, serverPort, NetTeamData.getById(NetPlayerData.getTeamIdFor(asPlayerId)));
+
 		if (playerData.id != NetPlayerData.localPlayerId)
 		{
 			EventDispatcherLite.instance.dispatchEvent(new EventLite("player_connected", playerData));
@@ -90,7 +88,6 @@ class PlayerConnectEvent extends NetEvent
 				NetworkManager.instance.connectTo(playerData.id, playerData.serverUrl, playerData.serverPort);
 			}
 		}
-		*/
 
 		super.execute(senderId, packetIndex, siblingNetworkEvents);
 	}
