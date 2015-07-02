@@ -1,8 +1,8 @@
 package jekyllize.net;
 
+import jekyllize.net.data.NetPacket;
 import jekyllize.net.events.INetEvent;
 import jekyllize.net.events.NetEvent;
-import jekyllize.net.packets.NetPacket;
 import jekyllize.net.UdpClient;
 import jekyllize.utils.BitStreamReader;
 

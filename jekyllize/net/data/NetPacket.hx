@@ -1,4 +1,4 @@
-package jekyllize.net.packets;
+package jekyllize.net.data;
 
 import haxe.ds.IntMap;
 import haxe.ds.ObjectMap;
